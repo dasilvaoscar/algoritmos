@@ -5,7 +5,7 @@ class Stack {
   }
 
   push(data) {
-    if (data.length) this.data = [...data, ...this.data]
+    if (data.length) this.data = [...this.data, ...data]
     else this.data = [data, ...this.data]
   }
 
@@ -46,7 +46,12 @@ const myStack = new Stack([1])
 console.log(myStack)
 
 myStack.push(2)
+console.log(myStack)
+
 myStack.push(3)
 console.log(myStack)
 
-console.log(myStack.search(3))
+myStack.pop()
+console.log(myStack)
+
+// console.log(myStack.search(3))
