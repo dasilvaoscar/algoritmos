@@ -3,31 +3,36 @@ import { expect } from "vitest";
 import { Deque } from './deque'
 
 describe("Deque", () => {
-  it("Deve inserir um item no inicio do array", () => {
+  it("Deve inserir um item no inicio", () => {
     const sut = new Deque<number>([2]);
     sut.pushFront(25);
 
     expect(sut.data[0]).toBe(25);
   });
 
-  it("Deve inserir um item no final do array", () => {
+  it("Deve inserir um item no final", () => {
     const sut = new Deque<number>([2]);
     sut.pushBack(25);
 
     expect(sut.data[sut.length - 1]).toBe(25);
   });
 
-  it("Deve remover um item no inicio do array", () => {
+  it("Deve remover um item no inicio", () => {
     const sut = new Deque<number>([2, 25]);
     sut.popFront();
 
     expect(sut.data[0]).toBe(25);
   });
 
-  it("Deve remover um item no final do array", () => {
+  it("Deve remover um item no final", () => {
     const sut = new Deque<number>([2, 25]);
     sut.popBack();
 
     expect(sut.data[sut.length - 1]).toBe(2);
   });
+
+  it("Deve retornar quantos items existem", () => {
+    const sut = new Deque<number>([1, 2, 3, 4, 5])
+    expect(sut.length).toBe(5)
+  })
 });
