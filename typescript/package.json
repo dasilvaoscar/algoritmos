@@ -4,11 +4,14 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
+    "test": "vitest",
     "array": "ts-node ./src/array.ts",
-    "queue": "ts-node ./src/queue.ts"
+    "queue": "ts-node ./src/queue.ts",
+    "deque": "ts-node ./src/deque.ts"
   },
   "devDependencies": {
     "ts-node": "^10.9.2",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
   }
 }

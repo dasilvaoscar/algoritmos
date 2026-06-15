@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
-    "module": "es2020",
-    "target": "es6",
-    "types": [],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "types": ["vitest/globals"],
+    "rootDir": "src",
+    "baseUrl": ".",
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
