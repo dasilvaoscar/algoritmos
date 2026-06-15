@@ -6,7 +6,7 @@ class Stack {
 
   push(data) {
     if (data.length) this.data = [...this.data, ...data]
-    else this.data = [data, ...this.data]
+    else this.data = [...this.data, data]
   }
 
   pop() {

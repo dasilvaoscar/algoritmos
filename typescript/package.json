@@ -1,0 +1,14 @@
+{
+  "name": "testes",
+  "type": "module",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "array": "ts-node ./src/array.ts",
+    "queue": "ts-node ./src/queue.ts"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}
