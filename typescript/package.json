@@ -7,7 +7,8 @@
     "test": "vitest",
     "array": "ts-node ./src/array.ts",
     "queue": "ts-node ./src/queue.ts",
-    "deque": "ts-node ./src/deque.ts"
+    "deque": "ts-node ./src/deque.ts",
+    "ll": "ts-node ./src/linked-list.ts"
   },
   "devDependencies": {
     "ts-node": "^10.9.2",
