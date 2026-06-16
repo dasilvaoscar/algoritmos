@@ -1,64 +1,70 @@
 class LNode<T> {
   public data: T;
   public next: LNode<T> | null = null;
+  public index: number = 0
 
-  constructor(data: T) {
+  constructor(data: T, index: number) {
     this.data = data;
+    this.index = index
   }
 }
 
-class LinkedList<T> {
+export class LinkedList<T> {
   private head: LNode<T> | null = null;
   private count = 0;
 
+  get length() {
+    return this.count
+  }
+
   push(item: T) {
-    const newNode = new LNode<T>(item);
+    this.recursivePush(this.head!, item)
+  } 
+
+  recursivePush(node: LNode<T>, item: T) {
+    const newNode = new LNode<T>(item, this.count);
 
     if (this.head === null) {
+      this.count++;
       this.head = newNode;
-    } else {
-      let current = this.head;
-      while (current.next !== null) current = current.next;
-      current.next = newNode;
+      return
+    } 
+
+    if (node?.next === null) {
+      this.count++;
+      node.next = newNode
+      return
     }
 
-    this.count++;
+    this.recursivePush(node?.next, item)
   }
 
   remove(item: T) {
+    this.recursiveRemove(this.head!, item)
+  }
+
+  private recursiveRemove(node: LNode<T>, item: T) {
     if (this.count === 0) return;
 
-    if (this.head?.data === item) {
-      this.head = this.head.next;
+    if (node?.data === item) {
+      this.head = node?.next;
       this.count--;
       return;
     }
 
-    let current = this.head;
-    while (current?.next !== null && current?.next.data !== item) {
-      current = current?.next;
+    if (node.data !== item) {
+      this.recursiveRemove(node.next!, item)
     }
-
-    current.next = current?.next?.next;
-    this.count--;
   }
 
   indexOf(data: T): number {
-    if (this.count === 0) return -1
-    if (this?.head?.data === data) return this?.head?.index
-    
-    let current = this.head as CNode<T>
-    while (current.next !== null && current.next.data !== data) current = current?.next!
-    return current?.next?.index!
+    return this.recursiveIndexOf(this.head!, data)!
+  }
+
+  private recursiveIndexOf(node: LNode<T>, value: T): number | undefined {
+    if (this.count === 0) return
+    if (node?.data === value) return node?.index!
+    if (node.next !== null) return this.recursiveIndexOf(node?.next!, value)!
+    return
   }
 }
-
-const myLL = new LinkedList<string>()
-
-myLL.append("Oscar")
-myLL.append("da")
-myLL.append("Silva")
-console.log(myLL)
-
-myLL.remove("da")
-console.log(myLL)

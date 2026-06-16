@@ -9,7 +9,9 @@
     "queue": "ts-node ./src/queue.ts",
     "deque": "ts-node ./src/deque.ts",
     "ll": "ts-node ./src/linked-list.ts",
-    "binary-search": "ts-node ./src/binary-search.ts"
+    "binary-search": "ts-node ./src/binary-search.ts",
+    "binary-tree": "ts-node ./src/binary-tree.ts",
+    "manual": "ts-node ./src/manual-tests.ts"
   },
   "devDependencies": {
     "ts-node": "^10.9.2",
