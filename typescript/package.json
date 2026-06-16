@@ -5,16 +5,16 @@
   "license": "MIT",
   "scripts": {
     "test": "vitest",
-    "array": "ts-node ./src/array.ts",
-    "queue": "ts-node ./src/queue.ts",
-    "deque": "ts-node ./src/deque.ts",
-    "ll": "ts-node ./src/linked-list.ts",
-    "binary-search": "ts-node ./src/binary-search.ts",
-    "binary-tree": "ts-node ./src/binary-tree.ts",
-    "manual": "ts-node ./src/manual-tests.ts"
+    "array": "tsx ./src/array.ts",
+    "queue": "tsx ./src/queue.ts",
+    "deque": "tsx ./src/deque.ts",
+    "ll": "tsx ./src/linked-list.ts",
+    "binary-search": "tsx ./src/binary-search.ts",
+    "binary-tree": "tsx ./src/binary-tree.ts",
+    "manual": "tsx ./src/manual-tests.ts",
+    "start": "tsx ./src/server.ts"
   },
   "devDependencies": {
-    "ts-node": "^10.9.2",
     "typescript": "^6.0.3",
     "vitest": "^4.1.9"
   }
